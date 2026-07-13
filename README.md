@@ -49,6 +49,42 @@ Configuration Note: Inside the script, the default exit interface is set to INTE
 
 ### Usage & Examples
 
+#### Update Version 2
+
+```
+nano /root/targets.txt
+```
+
+```
+# تنظیم ترافیک برای خروجی وارپ
+interface=warp
+[
+  myip.wtf
+  speedtest.com
+  129.140.0.0/24
+  14.15.26.32
+  core.digikala.com
+]
+
+# تنظیم ترافیک برای خروجی تور یا هر تانل دیگر
+interface=tor
+[
+  fifa.com
+  119.140.0.0/24
+  16.15.26.32
+]
+```
+
+### ۱. وارد کردن لیست از فایل (Import)
+
+برای خواندن فایل دیتای آدرس‌ها و اعمال فورا‌یِ قوانین فایروال و مسیرها:
+
+
+```
+routing-mgr import /root/targets.txt
+```
+
+
 The script provides a simple Command Line Interface (CLI):
 
 ```
@@ -88,6 +124,32 @@ To see which domains are being listened to and what IPs are currently cached or 
 
 ```
 sudo routing-mgr list
+```
+
+نمونه خروجی  دستور
+
+```
+================ Active Routing Lists ================
+
+--> Interface: warp
+  Configured Domains:
+    - myip.wtf
+    - speedtest.com
+    - core.digikala.com
+  Active/Cached IPs in Kernel (ipset):
+    - 129.140.0.0/24
+    - 14.15.26.32
+    - 104.21.19.201  <-- (آی‌پی داینامیک کش شده از دامنه)
+
+--> Interface: tor
+  Configured Domains:
+    - zara.com
+  Active/Cached IPs in Kernel (ipset):
+    - 119.140.0.0/24
+    - 16.15.26.32
+
+======================================================
+
 ```
 
 ### 5. Clear Everything (Flush)

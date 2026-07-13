@@ -47,8 +47,9 @@ Configuration Note: Inside the script, the default exit interface is set to INTE
 
 ----
 
-### Usage & Examples
+# Usage & Examples
 
+## Version 2.0
 #### Update Version 2
 
 ```
@@ -91,6 +92,7 @@ The script provides a simple Command Line Interface (CLI):
 routing-mgr {add|del|list|flush}
 ```
 
+## Version 1.0
 ### 1. Route a Domain and its Subdomains
 
 To route myip.wtf and any subdomain under it (e.g., sub.myip.wtf) through the warp interface:

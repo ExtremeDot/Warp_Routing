@@ -27,7 +27,8 @@ It safely manages `dnsmasq`, bypasses `systemd-resolved` port 53 conflicts, crea
 ## Installation
 
 1. Download or copy the script to your server:
-   ```bash
+   
+```
    sudo nano /usr/local/bin/routing-mgr
 ```
 
